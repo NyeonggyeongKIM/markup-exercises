@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>nav</title>
+
+  <style>
+
+    body,
+    html {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+    }
+
+    ul,li {
+      list-style: none;
+    }
+
+    /* ---------------------------------------------------- */
+
+    header {
+      width: 10vw;
+      height: 100vh;
+      background-color: darksalmon;
+      margin-right: 10vw;
+    }
+
+    nav {
+      width: 30vw;
+      height: 100vh;
+      background-color: burlywood;
+      position: absolute;
+      /* z-index: 2; */
+      display: flex;
+      align-items: center;
+      opacity: 0;
+    }
+
+    li {
+      width: 8vw;
+      height: 5vh;
+      background-color: white;
+      border-radius: 10px;
+      margin-bottom: 2vh;
+      text-align: center;
+      line-height: 40px;
+      font-weight: bold;
+    }
+
+    li:hover {
+      cursor: pointer;
+    }
+
+    button {
+      width: 10vw;
+      height: 10vh;
+      position: relative;
+      z-index: 3;
+    }
+
+    #container {
+      width: 40vw;
+      height: 40vh;
+      background-color: darkseagreen;
+      opacity: 0;
+    }
+
+    a {
+      width: 3vw;
+      height: 3vh;
+      background-color: black;
+      color: white;
+      position: absolute;
+      top: 5vh;
+      left: 2vw;
+    }
+  </style>
+
+</head>
+<body>
+  <header>
+    <nav>
+            <ul>ul
+              <li>click below</li>
+              <li id="tada">container</li>
+              <li id="remove">remove</li>
+            </ul>
+
+            <a href="#">Close</a>
+
+    </nav>
+  </header>
+
+
+
+  <button>click</button>
+  <div id="container"></div>
+
+
+<script>
+
+// nav button 
+  const button = document.querySelector('button');
+  const nav = document.querySelector('nav');
+  
+  button.addEventListener('click' , function(){
+    nav.style.opacity = 1;
+    nav.style.zIndex = 4;
+  });
+
+
+// container li
+  const li = document.querySelector('#tada');
+  const container = document.querySelector('#container');
+  const remove = document.querySelector('#remove');
+
+  li.addEventListener('click' , function(){
+    container.style.opacity = 1;
+  });
+
+  remove.addEventListener('click' , function(){
+    container.style.opacity = 0;
+  });
+
+// close button
+const a = document.querySelector('a');
+
+a.addEventListener('click' , function(){
+  nav.style.opacity = 0;
+  nav.style.zIndex = 1;
+});
+
+</script>
+
+</body>
+</html>
