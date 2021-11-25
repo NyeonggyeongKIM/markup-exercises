@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      list-style: none;
+      text-decoration: none;
+      color: #333;
+    }
+
+    #container {
+      width: 1000px;
+      height: 800px;
+      background-color: pink;
+      margin: 0 auto;
+    }
+
+    header {
+      width: inherit;
+      height: 100px;
+      background-color: skyblue;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    h1 {
+      width: 200px;
+      height: 40px;
+      border: 1px solid salmon;
+    }
+
+    #menu-container {
+      width: 600px;
+      height: 40px;
+      /* display: flex;
+      align-items: center;
+      justify-content: space-around; */
+      background-color: lemonchiffon;
+    }
+
+    #main-menu {
+      font-size: 18px;
+      font-weight: bold;
+      text-align: center;
+      float: right;
+    }
+
+    #sub-container {
+      width: inherit;
+      height: 0;
+      text-align: center;
+      font-size: 14px;
+      font-weight: normal;
+      /* display: flex;
+      flex-direction: column;
+      justify-content: space-between; */
+      position: relative;
+      top: 100;
+      background-color: lightgoldenrodyellow;
+    }
+
+    #sub-menu {
+      height: 30px;
+      display: none;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="container">
+
+    <header>
+
+      <h1>LOGO</h1>
+
+      <ul id="menu-container">
+
+        <li id="main-menu"><a href="#">main menu1</a>
+          <ul id="sub-container">
+            <li id="sub-menu"><a href="#">sub menu1</a></li>
+            <li id="sub-menu"><a href="#">sub menu2</a></li>
+            <li id="sub-menu"><a href="#">sub menu3</a></li>
+            <li id="sub-menu"><a href="#">sub menu4</a></li>
+          </ul>
+        </li>
+
+        <li id="main-menu"><a href="#">main menu2</a>
+          <ul id="sub-container">
+            <li id="sub-menu"><a href="#">sub menu1</a></li>
+            <li id="sub-menu"><a href="#">sub menu2</a></li>
+            <li id="sub-menu"><a href="#">sub menu3</a></li>
+            <li id="sub-menu"><a href="#">sub menu4</a></li>
+          </ul>
+        </li>
+
+        <li id="main-menu"><a href="#">main menu3</a>
+          <ul id="sub-container">
+            <li id="sub-menu"><a href="#">sub menu1</a></li>
+            <li id="sub-menu"><a href="#">sub menu2</a></li>
+            <li id="sub-menu"><a href="#">sub menu3</a></li>
+            <li id="sub-menu"><a href="#">sub menu4</a></li>
+          </ul>
+        </li>
+
+        <li id="main-menu"><a href="#">main menu4</a>
+          <ul id="sub-container">
+            <li id="sub-menu"><a href="#">sub menu1</a></li>
+            <li id="sub-menu"><a href="#">sub menu2</a></li>
+            <li id="sub-menu"><a href="#">sub menu3</a></li>
+            <li id="sub-menu"><a href="#">sub menu4</a></li>
+          </ul>
+        </li>
+
+      </ul>
+    </header>
+
+  </div>
+
+
+  <script>
+
+    const mainMenu = document.querySelectorAll('#main-menu');
+    const subMenu = document.querySelectorAll('#sub-menu');
+    const subBox = document.querySelectorAll('#sub-container');
+
+    console.log(mainMenu);
+    console.log(subMenu);
+    console.log(subBox);
+
+    for(let i = 0; i < mainMenu.length; i++){
+      mainMenu[i].addEventListener('mouseover' , function(){
+        for(let j=0; j < subMenu.length; j++){
+          subBox[j].style.height = '180px';
+          for(let k = 0; k < subMenu.length; k++){
+            subMenu[k].style.display = 'block';
+          }
+        }
+      })
+    }
+
+  </script>
+
+</body>
+</html>
