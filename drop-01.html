@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
-
-    *{
+    * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
@@ -41,10 +41,14 @@
     #menu-container {
       width: 600px;
       height: 40px;
-      /* display: flex;
-      align-items: center;
-      justify-content: space-around; */
       background-color: lemonchiffon;
+
+      /* 질문 포인트 */
+
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-around;
+
     }
 
     #main-menu {
@@ -72,9 +76,9 @@
       height: 30px;
       display: none;
     }
-
   </style>
 </head>
+
 <body>
   <div id="container">
 
@@ -136,11 +140,11 @@
     console.log(subMenu);
     console.log(subBox);
 
-    for(let i = 0; i < mainMenu.length; i++){
-      mainMenu[i].addEventListener('mouseover' , function(){
-        for(let j=0; j < subMenu.length; j++){
+    for (let i = 0; i < mainMenu.length; i++) {
+      mainMenu[i].addEventListener('mouseover', function () {
+        for (let j = 0; j < subMenu.length; j++) {
           subBox[j].style.height = '180px';
-          for(let k = 0; k < subMenu.length; k++){
+          for (let k = 0; k < subMenu.length; k++) {
             subMenu[k].style.display = 'block';
           }
         }
@@ -150,4 +154,5 @@
   </script>
 
 </body>
+
 </html>
