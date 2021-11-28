@@ -1,0 +1,68 @@
+/* test css */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  color: inherit;
+  text-align: center;
+}
+
+header {
+  width: 1200px;
+  height: 100px;
+  background-color: lightblue;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1 {
+  width: 200px;
+  height: 40px;
+  background-color: palevioletred;
+}
+
+nav {
+  width: 600px;
+  height: 50px;
+  background-color: plum;
+}
+
+#gnb {
+  width: 600px;
+  height: 200px;
+  display: flex;
+  justify-content: space-around;
+}
+
+#main-menu {
+  /* 메인메뉴 위드는 반드시!!!!! 100% */
+  width: 100%;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  /* 여기에 꼭!!!!! 스트레치 넣을 것!!!! */
+  align-items: stretch;
+  line-height: 40px;
+  transition: 0.2s;
+}
+
+#sub {
+  background-color: cadetblue;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 10px;
+height: 0;
+transition: 0.2s;
+}
+
+#sub-menu {
+  height: 30px;
+  display: none;
+}

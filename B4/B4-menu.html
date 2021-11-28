@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      text-decoration: none;
+      list-style: none;
+      color: #333;
+      text-align: center;
+    }
+
+    header {
+      width: 1200px;
+      height: 100px;
+      background-color: aliceblue;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    h1 {
+      width: 200px;
+      height: inherit;
+      border: 1px solid salmon;
+      float: left;
+    }
+
+    #nav-box {
+      width: 100%;
+      height: 150px;
+      background-color: sandybrown;
+      position: absolute;
+      top: 100px;
+      left: 0;
+      display: none;
+    }
+
+    nav {
+      width: 600px;
+      height: 50px;
+      float: right;
+      margin-right: 30px;
+      /* background-color: seagreen; */
+      margin-top: 50px;
+    }
+
+    #gnb {
+      width: 100%;
+    }
+
+    .main-menu {
+      width: 25%;
+      float: left;
+      position: relative;
+    }
+
+    .main-menu>a {
+      display: block;
+      font-size: 20px;
+      font-weight: bold;
+      height: 50px;
+    }
+
+    .sub {
+      width: 100%;
+      /* margin-top: 20px; */
+      /* background-color: seashell; */
+      display: none;
+      position: absolute;
+      /* z-index: 2; */
+    }
+
+    .sub-menu>a {
+      display: block;
+      height: 40px;
+      line-height: 40px;
+    }
+
+  </style>
+
+  <script src="js/jquery-3.6.0.min.js"></script>
+  <script src="js/menu.js"></script>
+
+</head>
+<body>
+  <header>
+    <h1>LOGO</h1>
+    <div id="nav-box"></div>
+    <nav>
+      <ul id="gnb">
+        <li class="main-menu"><a href="#">menu1</a>
+            <ul class="sub">
+              <li class="sub-menu"><a href="#">sub1</a></li>
+              <li class="sub-menu"><a href="#">sub2</a></li>
+              <li class="sub-menu"><a href="#">sub3</a></li>
+              <li class="sub-menu"><a href="#">sub4</a></li>
+            </ul>
+        </li>
+
+        <li class="main-menu"><a href="#">menu2</a>
+          <ul class="sub">
+            <li class="sub-menu"><a href="#">sub1</a></li>
+            <li class="sub-menu"><a href="#">sub2</a></li>
+            <li class="sub-menu"><a href="#">sub3</a></li>
+            <li class="sub-menu"><a href="#">sub4</a></li>
+          </ul>
+      </li>
+
+      <li class="main-menu"><a href="#">menu3</a>
+        <ul class="sub">
+          <li class="sub-menu"><a href="#">sub1</a></li>
+          <li class="sub-menu"><a href="#">sub2</a></li>
+          <li class="sub-menu"><a href="#">sub3</a></li>
+          <li class="sub-menu"><a href="#">sub4</a></li>
+        </ul>
+    </li>
+
+    <li class="main-menu"><a href="#">menu4</a>
+      <ul class="sub">
+        <li class="sub-menu"><a href="#">sub1</a></li>
+        <li class="sub-menu"><a href="#">sub2</a></li>
+        <li class="sub-menu"><a href="#">sub3</a></li>
+        <li class="sub-menu"><a href="#">sub4</a></li>
+      </ul>
+  </li>
+      </ul>
+    </nav>
+  </header>
+</body>
+</html>
