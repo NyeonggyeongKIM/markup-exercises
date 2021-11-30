@@ -8,147 +8,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
-  <style>
-    /* init */
-    *{
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      text-decoration: none;
-      list-style: none;
-      color: inherit;
-      font-family: "Shadows Into Light";
-    }
+<link rel="stylesheet" href="css/layout.css">
 
-    body {
-      background-color: #e82b17;
-    }
-
-    /* header black box ---------------------------------------------------- */
-
-    #box {
-      width: 100%;
-      height: 200px;
-      background-color: black;
-      position: absolute;
-      z-index: 1;
-      padding-top: 30px;
-    }
-
-    h1 {
-      width: 450px;
-      margin: 0 auto;
-      /* border: 1px solid white; */
-      display: flex;
-      justify-content: center;
-    }
-
-    img {
-      height: 150px;
-    }
-
-    /* menu section +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
-
-    /* 메뉴 백그라운드 흰박스 */
-    #menu-box {
-      width: 100%;
-      height: 400px;
-      background-color: white;
-      transform: skewY(17deg);
-      display: flex;
-      justify-content: end;
-      align-items: flex-end;
-      position: absolute;
-      top: 9%;
-      opacity: 0;
-    }
-
-    /* 네비게이션 메뉴 바 */
-    #menu-bar {
-      width: 0;
-      height: 60px;
-      background-color: white;
-      /* border: 1px solid pink; */
-      /* transform: skewX(20deg); */
-      transform: skewY(17deg);
-      position: absolute;
-      top: 50%;
-      display: flex;
-      align-items: flex-end;
-    }
-
-    #main-menu {
-      color: black;
-      font-size: 30px;
-      margin-right: 120px;
-      display: none;
-    }
-
-    #main-menu:nth-child(1) {
-      margin-left: 300px;
-    }
-
-    #main-menu:nth-child(6) {
-      font-size: 25px;
-    }
-
-    #main-menu:nth-child(7) {
-      margin-right: 0;
-      margin-left: 70;
-      font-size: 20px;
-    }
-
-    /* 네비게이션 바를 부르는 메뉴 버튼 */
-    #menu-btn {
-      width: 100px;
-      height: 50px;
-      background-color: white;
-      transform: skewY(17deg);
-      position: absolute;
-      z-index: 4;
-      top: 87%;
-      right: 0;
-      font-size: 30px;
-      text-align: center;
-    }
-
-    /* 서브메뉴 ul */
-    #origin {
-      font-size: 30px;
-      margin-right: 490px;
-      height: 130px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-    }
-
-    #fashion {
-      font-size: 30px;
-      margin-right: 700px;
-      height: 200px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-    }
-
-    #menu-box a {
-      display: block;
-    }
-
-    #origin>li:hover>a {
-      background-color: black;
-      color: white;
-    }
-
-    #fashion>li:hover>a {
-      background-color: black;
-      color: white;
-    }
-
-  </style>
 </head>
 <body>
 
+  <div id="container">
   <div id="box">
     <h1><img src="logo.png" alt="LOGO"></h1>
   </div>
@@ -162,7 +27,7 @@
   <li id="main-menu"><a href="#">Charactors</a></li>
   <li id="main-menu"><a href="#">Director</a></li>
   <li id="main-menu"><a href="#">Fashion</a></li>
-  <li id="main-menu"><a href="#">Walt Disney Official</a></li>
+  <li id="main-menu"><a href="http://www.disney.co.kr/home/index.jsp">Walt Disney Official</a></li>
   <li id="main-menu"><a href="#" id="close">X CLOSE</a></li>
 
 </div>
@@ -183,9 +48,21 @@
 <div id="menu-btn"><a href="#">MENU</a></div>
 
 
+<!-- main ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+
+
+
+  <div id="video">
+    <video width="100%" height="100%" src="Disney's Cruella _ Official Trailer.mp4" autoplay muted></video>
+  </div>
+
+</div>
 <!-- script +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 
 <script>
+
+  // menu section __________________________________________________________
 const menuBtn = document.querySelector('#menu-btn');
 const menuBar = document.querySelector('#menu-bar');
 const menuBox = document.querySelector('#menu-box');
@@ -196,22 +73,29 @@ const subLi = document.querySelectorAll('#origin', '#fashion');
 // 메뉴바가 나타나게 하기
 menuBtn.addEventListener('click' , function(){
   menuBar.style.width = '100%';
+  menuBar.style.zIndex = '9';
   for(let i =0; i<mainLi.length; i++){
     mainLi[i].style.display = 'flex';
+    mainLi[i].style.zIndex = '10';
 
     // 백그라운드와 서브메뉴가 나오고 메뉴바 색을 바꾸기
     menuBar.addEventListener('mouseover' , function(){
     menuBox.style.opacity = '1';
+    menuBox.style.zIndex = '7';
     menuBar.style.backgroundColor = 'black';
     mainLi[i].style.color = 'white';
     for(let j=0; j<subLi.length; j++){
       subLi[j].style.display = 'flex';
+      subLi[j].style.zIndex = '8';
 
       //닫기
       document.getElementById('close').addEventListener('click', function(){
         menuBar.style.width = '0';
+        menuBar.style.backgroundColor = 'white';
         menuBox.style.opacity = '0';
         mainLi[i].style.display = 'none';
+        mainLi[i].style.zIndex = '0';
+        mainLi[i].style.color = 'black';
       });
 
     }
@@ -221,7 +105,11 @@ menuBtn.addEventListener('click' , function(){
 });
 
 
+// video ___________________________________________________
+const vid = document.querySelector('video');
+console.log(vid);
 
+vid
 
 
 </script>
