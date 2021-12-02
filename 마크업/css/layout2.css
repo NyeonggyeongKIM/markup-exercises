@@ -1,0 +1,164 @@
+/* index style sheet */
+
+* {margin: 0; padding: 0; box-sizing: border-box; color: inherit;
+  list-style: none; text-decoration: none; text-align: center; font-family: "Shadows Into Light";}
+
+  a{display: block; }
+
+  ul,li{cursor: pointer;}
+
+
+  /* container */
+  #container {
+    width: 100vw;
+    height: 400vh;
+  }
+
+  section {
+    width: 100vw;
+    height: 100vh;
+    background-color: #e82b17;
+    border-bottom: 1px solid black;
+  }
+
+  /* menu */
+  nav {
+    width: 100vw;
+    height: 50px;
+    position: fixed;
+    top: 50%;
+    transform: skewY(17deg);
+    /* display: none; */
+  }
+
+  #main {
+    width: 100%;
+    height: 50px;
+    background-color: white;
+    display: flex;
+  }
+
+  .main-menu {
+    width: 20%;
+    height: 50px;
+    z-index: 3;
+    line-height: 50px;
+    font-size: 28px;
+  }
+
+  #sub-box {
+    position: fixed;
+    top: 29%;
+    width: 100vw;
+    height: 200px;
+    background-color: white;
+    display: flex;
+    padding-top: 30px;
+    transform: skewY(17deg);
+    /* display: none; */
+  }
+
+  .sub {
+    width: 14.3%;
+    height: 200px;
+  }
+
+  .sub-menu {
+    height: 50px;
+    line-height: 50px;
+    font-size: 20px;
+  }
+
+  .sub-menu:hover {
+    background-color: black;
+    color: white;
+  }
+
+  #menu-btn {
+    width: 100px;
+    height: 50px;
+    background-color: white;
+    position: fixed;
+    top: 87%;
+    right: 0;
+    transform: skewY(17deg);
+    z-index: 4;
+    line-height: 50px;
+    cursor: pointer;
+  }
+
+
+  /* header */
+  header {
+    width: 100vw;
+    height: 200px;
+    background-color: black;
+    position: absolute;
+    top: 0;
+  }
+
+  #logo-box {
+    width: 200px;
+    height: 100%;
+    margin: 0 auto;
+    padding-top: 40px;
+  }
+
+  #logo-box>img {
+    width: 200px;
+  }
+
+  /* main1 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+  #main1 {
+    justify-content: space-around;
+    z-index: 0;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+
+  #cruella {
+    width: 30vw;
+    height: 80vh;
+    position: relative;
+    top: 200px;
+    z-index: 0;
+    margin: 0 auto;
+  }
+
+  #cruella>img {
+    height: 80vh;
+    /* z-index: 0; */
+  }
+
+  #button1 {
+    width: 10vw;
+    height: 10vh;
+    background-color: blanchedalmond;
+  }
+
+  #button2 {
+    width: 10vw;
+    height: 10vh;
+    background-color: blanchedalmond;
+  }
+
+
+  /* main2++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+  #main2 {
+    position: relative;
+  }
+
+
+  /* main4 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+  #main4 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #video {
+    width: 80vw;
+    margin: 0 auto;
+  }
