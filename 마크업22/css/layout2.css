@@ -1,0 +1,116 @@
+/* index style sheet */
+
+* {margin: 0; padding: 0; box-sizing: border-box; color: inherit;
+  list-style: none; text-decoration: none; text-align: center; font-family: "Shadows Into Light";}
+
+  a{display: block; }
+
+
+  /* container */
+  #container {
+    width: 100vw;
+    height: 400vh;
+  }
+
+  section {
+    width: 100vw;
+    height: 100vh;
+    background-color: #e82b17;
+    border-bottom: 1px solid black;
+  }
+
+  /* menu */
+  nav {
+    width: 100vw;
+    height: 50px;
+    position: absolute;
+    top: 50%;
+    transform: skewY(17deg);
+    /* display: none; */
+  }
+
+  #main {
+    width: 100%;
+    height: 50px;
+    background-color: white;
+    display: flex;
+  }
+
+  .main-menu {
+    width: 20%;
+    height: 50px;
+  }
+
+  .main-menu>a {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    font-size: 28px;
+  }
+
+  #sub-box {
+    position: absolute;
+    top: 29%;
+    width: 100vw;
+    height: 200px;
+    background-color: white;
+    display: flex;
+    padding-top: 30px;
+    transform: skewY(17deg);
+    /* display: none; */
+  }
+
+  .sub {
+    width: 14.3%;
+    height: 200px;
+  }
+
+  .sub-menu {
+    height: 50px;
+  }
+
+  .sub-menu>a {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    font-size: 20px;
+  }
+
+  .sub-menu>a:hover {
+    background-color: black;
+    color: white;
+  }
+
+  #menu-btn {
+    width: 100px;
+    height: 50px;
+    background-color: white;
+    position: fixed;
+    top: 87%;
+    right: 0;
+    transform: skewY(17deg);
+  }
+
+  #menu-btn>a {
+    width: 100%;
+    height: 100%;
+    line-height: 50px;
+  }
+
+  /* main */
+  header {
+    width: 100vw;
+    height: 200px;
+    background-color: black;
+  }
+
+  #logo-box {
+    width: 200px;
+    height: 100%;
+    margin: 0 auto;
+    padding-top: 40px;
+  }
+
+  #logo-box>img {
+    width: 200px;
+  }
