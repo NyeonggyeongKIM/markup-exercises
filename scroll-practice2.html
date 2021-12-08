@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scroll practice 02</title>
+
+<style>
+
+  *{box-sizing: border-box; margin: 0;padding: 0;}
+  main{padding-bottom: 100px;}
+
+  header {
+    height: 700px;
+    background-color: #ffeb3b;
+    padding: 100px;
+  }
+
+  section {
+    display: flex;
+    justify-content: space-between;
+    padding: 5%;
+  }
+
+  section div {
+    width: 23%;
+    height: 300px;
+    background-color: #ff9800;
+  }
+
+  /* 스크롤 애니메이션 */
+  .sa {
+    opacity: 0;
+    transition: all 0.5s ease;
+  }
+
+  .sa-up {
+    transform: translate(0,100px);
+  }
+
+  .sa-down {
+    transform: translate(0,-100px);
+  }
+
+  .sa-right {
+    transform: translate(-100px,0);
+  }
+
+  .sa-left {
+    transform: translate(100px,0);
+  }
+
+  /* 왼쪽으로 회전 */
+  .sa-rotateL{
+    transform: rotate(180deg);
+  } 
+
+  /* 오른쪽으로 회전 */
+  .sa-rotateR {
+    transform: rotate(-180deg);
+  }
+
+  .sa-scaleUp {
+    transform: scale(0.5);
+  }
+
+  .sa-scaleDown {
+    transform: scale(1.5);
+  }
+
+  .sa.show {
+    opacity: 1;
+    transform: none;
+  }
+
+</style>
+
+</head>
+<body>
+  <header>
+    <h1>아래로 <br> 스크롤해 보면</h1>
+  </header>
+
+  <main>
+    <section>
+      <div class="sa sa-up">div1</div>
+      <div class="sa sa-up">div2</div>
+      <div class="sa sa-up">div3</div>
+      <div class="sa sa-up">div4</div>
+    </section>
+
+    <section>
+      <div class="sa sa-up">div5</div>
+      <div class="sa sa-down">div6</div>
+      <div class="sa sa-right">div7</div>
+      <div class="sa sa-left">div8</div>
+    </section>
+
+    <section>
+      <div class="sa sa-rotateL">div9</div>
+      <div class="sa sa-rotateR">div10</div>
+      <div class="sa sa-scaleUp">div11</div>
+      <div class="sa sa-scaleDown">div12</div>
+    </section>
+  </main>
+
+  <script>
+    // scroll animation 
+    const saTriggerMargin = 300;
+    const saElementList = document.querySelectorAll('.sa');
+
+    const saFunc = function(){
+      for(const element of saElementList){
+        if(!element.classList.contains('show')){
+          if(window.innerHeight > element.getBoundingClientRect().top + saTriggerMargin){
+            element.classList.add('show');
+          }
+        }
+      }
+    }
+
+    window.addEventListener('load',saFunc);
+    window.addEventListener('scroll',saFunc);
+  </script>
+</body>
+</html>
